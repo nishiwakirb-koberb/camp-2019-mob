@@ -24,8 +24,7 @@ class VendingMachine
   end
 
   def stock
-    @stock.map do |soft_drink|
-      {price: soft_drink.price, name: soft_drink.name, amount: @stock.size}
-    end
+    soft_drink = @stock[0]
+    [{price: soft_drink.price, name: soft_drink.name, amount: @stock.size}]
   end
 end
