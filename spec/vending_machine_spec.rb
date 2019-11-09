@@ -46,8 +46,10 @@ RSpec.describe 'Vending machine' do
     vending_machine = VendingMachine.new
 
     # 格納されているジュースの情報（値段と名前と在庫）を取得できる。
-    expect(vending_machine.stock).to eq [
-      {price: 120, name: "コーラ", amount: 5}
-    ]
+    expect(vending_machine.stock).to contain_exactly(
+      {price: 120, name: "コーラ", amount: 5},
+      {price: 180, name: "コーラ", amount: 1},
+      {price: 140, name: "ファンタ", amount: 3}
+    )
   end
 end

@@ -4,7 +4,11 @@ class VendingMachine
 
   def initialize
     @total_money = 0
-    @stock = Array.new(5) { SoftDrink.new(name: 'コーラ', price: 120) }
+    @stock = [
+      *Array.new(5) { SoftDrink.new(name: 'コーラ', price: 120) },
+      *Array.new(1) { SoftDrink.new(name: 'コーラ', price: 180) },
+      *Array.new(3) { SoftDrink.new(name: 'ファンタ', price: 140) },
+    ]
   end
 
   def insert_money(money)
@@ -24,7 +28,9 @@ class VendingMachine
   end
 
   def stock
-    soft_drink = @stock[0]
-    [{price: soft_drink.price, name: soft_drink.name, amount: @stock.size}]
+    @stock.uniq.map do |soft_drink|
+      amount = @stock.select { |sd| sd == soft_drink }.size
+      { name: soft_drink.name, price: soft_drink.price, amount: amount }
+    end
   end
 end
