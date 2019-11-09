@@ -1,4 +1,5 @@
 require 'spec_helper'
+require './lib/vending_machine'
 
 RSpec.describe 'Vending machine' do
   example 'step 0' do
