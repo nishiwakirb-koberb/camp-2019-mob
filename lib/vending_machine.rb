@@ -10,6 +10,7 @@ class VendingMachine
       return money
     end
     @total_money += money
+    0
   end
 
   def total_money

@@ -33,5 +33,8 @@ RSpec.describe 'Vending machine' do
 
     expect(vending_machine.insert_money(5000)).to eq 5000
     expect(vending_machine.total_money).to eq 0
+
+    expect(vending_machine.insert_money(10)).to eq 0
+    expect(vending_machine.total_money).to eq 10
   end
 end
