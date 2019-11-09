@@ -4,7 +4,7 @@ class VendingMachine
   
   def initialize
     @total_money = 0
-    @stock = [SoftDrink.new(name: 'コーラ', price: 120), SoftDrink.new(name: 'コーラ', price: 120), SoftDrink.new(name: 'コーラ', price: 120), SoftDrink.new(name: 'コーラ', price: 120), SoftDrink.new(name: 'コーラ', price: 120)]
+    @stock = Array.new(5){ SoftDrink.new(name: 'コーラ', price: 120) }
   end
 
   def insert_money(money)
