@@ -4,6 +4,7 @@ class VendingMachine
   
   def initialize
     @total_money = 0
+    @stock = [SoftDrink.new(name: 'コーラ', price: 120), SoftDrink.new(name: 'コーラ', price: 120), SoftDrink.new(name: 'コーラ', price: 120), SoftDrink.new(name: 'コーラ', price: 120), SoftDrink.new(name: 'コーラ', price: 120)]
   end
 
   def insert_money(money)
@@ -20,5 +21,9 @@ class VendingMachine
 
   def refund
     @total_money.tap { @total_money = 0 }
+  end
+  
+  def stock
+    @stock
   end
 end
