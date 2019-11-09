@@ -37,4 +37,8 @@ RSpec.describe 'Vending machine' do
     expect(vending_machine.insert_money(10)).to eq 0
     expect(vending_machine.total_money).to eq 10
   end
+
+  example 'step 2' do
+    # 値段と名前の属性からなるジュースを１種類格納できる。初期状態で、コーラ（値段:120円、名前”コーラ”）を5本格納している。
+  end
 end
