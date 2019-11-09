@@ -44,12 +44,17 @@ RSpec.describe 'Vending machine' do
     # 初期状態で、コーラ（値段:120円、名前”コーラ”）を5本格納している。
     coke = SoftDrink.new(name: 'コーラ', price: 120)
     vending_machine = VendingMachine.new
+    # expect(vending_machine.stock).to eq [
+    #   coke,
+    #   coke,
+    #   coke,
+    #   coke,
+    #   coke
+    # ]
+
+    # 格納されているジュースの情報（値段と名前と在庫）を取得できる。
     expect(vending_machine.stock).to eq [
-      coke,
-      coke,
-      coke,
-      coke,
-      coke
+      {price: 120, name: "コーラ", amount: 5}
     ]
   end
 end

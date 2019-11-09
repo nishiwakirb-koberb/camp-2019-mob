@@ -1,10 +1,10 @@
 class VendingMachine
   ALLOWED_MONEY_LIST = [10, 50, 100, 500, 1000]
   NO_REFUND = 0
-  
+
   def initialize
     @total_money = 0
-    @stock = Array.new(5){ SoftDrink.new(name: 'コーラ', price: 120) }
+    @stock = Array.new(5) { SoftDrink.new(name: 'コーラ', price: 120) }
   end
 
   def insert_money(money)
@@ -22,8 +22,10 @@ class VendingMachine
   def refund
     @total_money.tap { @total_money = 0 }
   end
-  
+
   def stock
-    @stock
+    @stock.map do |soft_drink|
+      {price: soft_drink.price, name: soft_drink.name, amount: @stock.size}
+    end
   end
 end
