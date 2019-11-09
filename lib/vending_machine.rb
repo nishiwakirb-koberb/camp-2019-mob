@@ -12,8 +12,6 @@ class VendingMachine
   end
 
   def refund
-    money = @total_money
-    @total_money = 0
-    money
+    @total_money.tap { @total_money = 0 }
   end
 end
