@@ -19,5 +19,6 @@ RSpec.describe 'Vending machine' do
     # 払い戻し操作を行うと、投入金額の総計を釣り銭として出力する。
     expect(vending_machine.refund).to eq 1660
     expect(vending_machine.refund).to eq 0
+    expect(vending_machine.total_money).to eq 0
   end
 end
