@@ -39,6 +39,16 @@ RSpec.describe 'Vending machine' do
   end
 
   example 'step 2' do
-    # 値段と名前の属性からなるジュースを１種類格納できる。初期状態で、コーラ（値段:120円、名前”コーラ”）を5本格納している。
+    # 値段と名前の属性からなるジュースを１種類格納できる。
+    # 初期状態で、コーラ（値段:120円、名前”コーラ”）を5本格納している。
+    coke = SoftDrink.new(name: 'コーラ', price: 120)
+    vending_machine = VendingMachine.new
+    expect(vending_machine.stock).to eq [
+      coke,
+      coke,
+      coke,
+      coke,
+      coke
+    ]
   end
 end
