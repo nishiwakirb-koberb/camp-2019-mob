@@ -4,6 +4,9 @@ class VendingMachine
   end
 
   def insert_money(money)
+    if money == 1 || money == 5
+      return money
+    end
     @total_money += money
   end
 
