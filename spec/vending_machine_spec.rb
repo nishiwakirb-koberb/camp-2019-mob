@@ -21,4 +21,9 @@ RSpec.describe 'Vending machine' do
     expect(vending_machine.refund).to eq 0
     expect(vending_machine.total_money).to eq 0
   end
+
+  example 'step 1' do
+    # 想定外のもの（硬貨：１円玉、５円玉。お札：千円札以外のお札）が投入された場合は、投入金額に加算せず、それをそのまま釣り銭としてユーザに出力する。
+    expect(vending_machine.insert_money(1)).to eq 1
+  end
 end
