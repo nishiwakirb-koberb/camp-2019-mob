@@ -1,10 +1,12 @@
 class VendingMachine
+  ALLOWED_MONEY_LIST = [10, 50, 100, 500, 1000]   
+  
   def initialize
     @total_money = 0
   end
 
   def insert_money(money)
-    if money == 1 || money == 5
+    unless ALLOWED_MONEY_LIST.include?(money)
       return money
     end
     @total_money += money
