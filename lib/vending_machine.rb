@@ -1,5 +1,6 @@
 class VendingMachine
-  ALLOWED_MONEY_LIST = [10, 50, 100, 500, 1000]   
+  ALLOWED_MONEY_LIST = [10, 50, 100, 500, 1000]
+  NO_REFUND = 0
   
   def initialize
     @total_money = 0
@@ -10,7 +11,7 @@ class VendingMachine
       return money
     end
     @total_money += money
-    0
+    NO_REFUND
   end
 
   def total_money
