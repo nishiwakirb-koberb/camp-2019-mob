@@ -16,6 +16,6 @@ class SoftDrink
   end
 
   def hash
-    "#{name}.#{price}".hash
+    [name, price].hash
   end
 end
